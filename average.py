@@ -10,7 +10,14 @@ def average_expenses(file_path: str) -> float:
     Returns:
         float: average expenses
     """
-    pass
+    import json
+    s=0
+    f=open(file_path).read()
+    f=json.loads(f)
+    for i in f:
+        s+=f[i]
+    return s/len(f)
+
 
 # test
 file_path = "data.json"
